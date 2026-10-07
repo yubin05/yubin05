@@ -41,22 +41,7 @@ Terraform으로 인프라를 구성하고, CI/CD와 모니터링을 연결하며
 <details>
 <summary>EKS 배포 흐름 보기</summary>
 
-```mermaid
-%%{init: {"theme":"base","themeVariables":{"fontFamily":"sans-serif","fontSize":"14px","primaryColor":"#eef6f7","primaryTextColor":"#163647","primaryBorderColor":"#659a9f","lineColor":"#64808b","secondaryColor":"#f1f5f9","tertiaryColor":"#f8fafc","clusterBkg":"#f8fafc","clusterBorder":"#cbd5e1","edgeLabelBackground":"#ffffff","actorBkg":"#163647","actorBorder":"#163647","actorTextColor":"#ffffff","actorLineColor":"#94a3b8","signalColor":"#476673","signalTextColor":"#163647","labelBoxBkgColor":"#eef6f7","labelBoxBorderColor":"#659a9f","labelTextColor":"#163647","activationBkgColor":"#d3eeea","activationBorderColor":"#0f766e","sequenceNumberColor":"#ffffff"},"flowchart":{"htmlLabels":false,"curve":"linear","nodeSpacing":30,"rankSpacing":40},"sequence":{"mirrorActors":false,"actorMargin":35,"messageMargin":30}}}%%
-flowchart LR
-    App("01 · SOURCE<br/>eks-app") --> CI("02 · BUILD<br/>GitHub Actions")
-    CI -->|image push| ECR("Amazon ECR")
-    CI -->|tag update| Git("03 · CONFIG<br/>eks-infra")
-    Git --> Argo("04 · SYNC<br/>Argo CD")
-    Argo --> EKS("05 · DEPLOY<br/>Amazon EKS")
-    ECR -.->|image pull| EKS
-    classDef core fill:#163647,stroke:#163647,color:#ffffff,stroke-width:1px;
-    classDef accent fill:#0f766e,stroke:#0f766e,color:#ffffff,stroke-width:1px;
-    classDef storage fill:#eef6f7,stroke:#659a9f,color:#163647,stroke-width:1px;
-    class App,CI,Git core;
-    class Argo,EKS accent;
-    class ECR storage;
-```
+![프로젝트 아키텍처](https://raw.githubusercontent.com/yubin05/eks-infra/main/docs/diagrams/eks-blueprint.svg)
 
 [서비스 연결과 백엔드 요청 흐름 자세히 보기](https://github.com/yubin05/eks-infra#아키텍처)
 
@@ -81,18 +66,7 @@ ALB Controller와 CloudWatch Agent의 자격증명 조회 실패를 조사하면
 <details>
 <summary>AWS–Azure DR 구성 보기</summary>
 
-```mermaid
-%%{init: {"theme":"base","themeVariables":{"fontFamily":"sans-serif","fontSize":"14px","primaryColor":"#eef6f7","primaryTextColor":"#163647","primaryBorderColor":"#659a9f","lineColor":"#64808b","secondaryColor":"#f1f5f9","tertiaryColor":"#f8fafc","clusterBkg":"#f8fafc","clusterBorder":"#cbd5e1","edgeLabelBackground":"#ffffff","actorBkg":"#163647","actorBorder":"#163647","actorTextColor":"#ffffff","actorLineColor":"#94a3b8","signalColor":"#476673","signalTextColor":"#163647","labelBoxBkgColor":"#eef6f7","labelBoxBorderColor":"#659a9f","labelTextColor":"#163647","activationBkgColor":"#d3eeea","activationBorderColor":"#0f766e","sequenceNumberColor":"#ffffff"},"flowchart":{"htmlLabels":false,"curve":"linear","nodeSpacing":30,"rankSpacing":40},"sequence":{"mirrorActors":false,"actorMargin":35,"messageMargin":30}}}%%
-flowchart LR
-    DNS("Route 53") -->|Primary| AWS("AWS<br/>Amplify · ECS · Aurora")
-    DNS -.->|Failover| AZ("Azure<br/>Static Web Apps · ACA · MySQL")
-    classDef aws fill:#163647,stroke:#163647,color:#ffffff,stroke-width:1px;
-    classDef azure fill:#0f766e,stroke:#0f766e,color:#ffffff,stroke-width:1px;
-    classDef neutral fill:#eef6f7,stroke:#659a9f,color:#163647,stroke-width:1px;
-    class AWS aws;
-    class AZ azure;
-    class DNS neutral;
-```
+![프로젝트 아키텍처](https://raw.githubusercontent.com/yubin05/Project_TEAM_AWS/main/docs/diagrams/team-dr-blueprint.svg)
 
 [전체 아키텍처와 데이터 동기화](https://github.com/yubin05/Project_TEAM_AWS#멀티클라우드-dr-구성)
 
