@@ -78,6 +78,26 @@ ALB Controller와 CloudWatch Agent의 자격증명 조회 실패를 조사하면
 - S3–Blob 이벤트 기반 이미지 동기화와 ECS Blue/Green 배포 파이프라인을 구현했습니다.
 - DMS CDC 복제 방향과 가이드를 설계하고, 구현은 담당 팀원과 협업했습니다.
 
+<details>
+<summary>AWS–Azure DR 구성 보기</summary>
+
+```mermaid
+%%{init: {"theme":"base","themeVariables":{"fontFamily":"Arial, sans-serif","fontSize":"14px","primaryColor":"#eef6f7","primaryTextColor":"#163647","primaryBorderColor":"#659a9f","lineColor":"#64808b","secondaryColor":"#f1f5f9","tertiaryColor":"#f8fafc","clusterBkg":"#f8fafc","clusterBorder":"#cbd5e1","edgeLabelBackground":"#ffffff","actorBkg":"#163647","actorBorder":"#163647","actorTextColor":"#ffffff","actorLineColor":"#94a3b8","signalColor":"#476673","signalTextColor":"#163647","labelBoxBkgColor":"#eef6f7","labelBoxBorderColor":"#659a9f","labelTextColor":"#163647","activationBkgColor":"#d3eeea","activationBorderColor":"#0f766e","sequenceNumberColor":"#ffffff"},"flowchart":{"curve":"linear","nodeSpacing":30,"rankSpacing":40},"sequence":{"mirrorActors":false,"actorMargin":35,"messageMargin":30}}}%%
+flowchart LR
+    DNS("Route 53") -->|Primary| AWS("AWS<br/>Amplify · ECS · Aurora")
+    DNS -.->|Failover| AZ("Azure<br/>Static Web Apps · ACA · MySQL")
+    classDef aws fill:#163647,stroke:#163647,color:#ffffff,stroke-width:1px;
+    classDef azure fill:#0f766e,stroke:#0f766e,color:#ffffff,stroke-width:1px;
+    classDef neutral fill:#eef6f7,stroke:#659a9f,color:#163647,stroke-width:1px;
+    class AWS aws;
+    class AZ azure;
+    class DNS neutral;
+```
+
+[전체 아키텍처와 데이터 동기화](https://github.com/yubin05/Project_TEAM_AWS#멀티클라우드-dr-구성)
+
+</details>
+
 #### 🛡️ Security agent toolkit — 학습 프로젝트
 
 [실습 코드와 학습 기록](https://github.com/yubin05/security-agent-toolkit)
