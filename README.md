@@ -41,7 +41,7 @@ Terraform으로 인프라를 구성하고, CI/CD와 모니터링을 연결하며
 <details>
 <summary>EKS 배포 흐름 보기</summary>
 
-![프로젝트 아키텍처](https://raw.githubusercontent.com/yubin05/eks-infra/main/docs/diagrams/eks-blueprint.svg)
+![프로젝트 아키텍처](https://raw.githubusercontent.com/yubin05/eks-infra/main/docs/diagrams/eks-blueprint.svg?rev=2)
 
 [서비스 연결과 백엔드 요청 흐름 자세히 보기](https://github.com/yubin05/eks-infra#아키텍처)
 
@@ -66,7 +66,7 @@ ALB Controller와 CloudWatch Agent의 자격증명 조회 실패를 조사하면
 <details>
 <summary>AWS–Azure DR 구성 보기</summary>
 
-![프로젝트 아키텍처](https://raw.githubusercontent.com/yubin05/Project_TEAM_AWS/main/docs/diagrams/team-dr-blueprint.svg)
+![프로젝트 아키텍처](https://raw.githubusercontent.com/yubin05/Project_TEAM_AWS/main/docs/diagrams/team-dr-blueprint.svg?rev=2)
 
 [전체 아키텍처와 데이터 동기화](https://github.com/yubin05/Project_TEAM_AWS#멀티클라우드-dr-구성)
 
