@@ -39,6 +39,23 @@ Terraform으로 인프라를 구성하고, CI/CD와 모니터링을 연결하며
 - Prometheus·Grafana·CloudWatch로 상태를 관찰하고, k6 부하 테스트에서 HPA의 **Pod 2 → 6 확장**을 확인했습니다.
 
 <details>
+<summary>EKS 배포 흐름 보기</summary>
+
+```mermaid
+flowchart TD
+    App["eks-app · main에 코드 푸시"] --> CI["GitHub Actions · Docker 이미지 빌드"]
+    CI -->|이미지 푸시| ECR["Amazon ECR"]
+    CI -->|이미지 태그 커밋| Git["eks-infra · k8s/overlays/dev"]
+    Git -->|변경 감지| Argo["Argo CD · 자동 동기화"]
+    Argo -->|매니페스트 적용| EKS["EKS · Frontend / Backend"]
+    ECR -->|이미지 pull| EKS
+```
+
+[서비스 연결과 백엔드 요청 흐름 자세히 보기](https://github.com/yubin05/eks-infra#아키텍처)
+
+</details>
+
+<details>
 <summary>문제를 해결하며 배운 것</summary>
 
 ALB Controller와 CloudWatch Agent의 자격증명 조회 실패를 조사하면서, 공통 원인이 노드의 IMDS hop limit 설정임을 확인했습니다. 반복되는 증상을 노드 구성 수준에서 해결하는 경험을 했습니다.
