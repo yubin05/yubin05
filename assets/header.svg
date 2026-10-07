@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="280" viewBox="0 0 1200 280" role="img" aria-labelledby="title desc">
+  <title id="title">Yubin — Cloud and DevOps</title>
+  <desc id="desc">Infrastructure as code, delivery automation, and reliable systems.</desc>
+  <defs>
+    <linearGradient id="bg" x2="1" y2="1"><stop stop-color="#0c1628"/><stop offset="1" stop-color="#163647"/></linearGradient>
+    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse"><path d="M40 0H0V40" fill="none" stroke="#80b8ca" stroke-opacity=".08"/></pattern>
+  </defs>
+  <rect width="1200" height="280" rx="20" fill="url(#bg)"/>
+  <rect width="1200" height="280" rx="20" fill="url(#grid)"/>
+  <rect x="56" y="53" width="4" height="173" rx="2" fill="#62ddd0"/>
+  <g font-family="Segoe UI,Arial,sans-serif">
+    <text x="82" y="82" font-size="13" font-weight="600" letter-spacing="4" fill="#62ddd0">BUILD · AUTOMATE · OBSERVE</text>
+    <text x="80" y="145" font-size="52" font-weight="700" fill="#f0f6fc">Yubin</text>
+    <text x="82" y="190" font-size="25" fill="#b5cedd">Cloud &amp; DevOps</text>
+    <text x="82" y="228" font-size="15" fill="#91aabb">Infrastructure as code. Reliable delivery. Continuous learning.</text>
+    <g fill="none" stroke="#62ddd0" stroke-width="2">
+      <path d="M802 140H847M953 140H998" stroke-opacity=".55"/>
+      <rect x="696" y="108" width="106" height="64" rx="12"/>
+      <rect x="847" y="108" width="106" height="64" rx="12"/>
+      <rect x="998" y="108" width="106" height="64" rx="12"/>
+      <path d="M749 176V202H1051V176" stroke-opacity=".3" stroke-dasharray="5 5"/>
+    </g>
+    <g font-size="16" font-weight="600" fill="#d0e8ed" text-anchor="middle">
+      <text x="749" y="146">IaC</text><text x="900" y="146">GitOps</text><text x="1051" y="146">Observe</text>
+    </g>
+  </g>
+</svg>
