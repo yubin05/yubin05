@@ -8,6 +8,24 @@ Terraform으로 인프라를 구성하고, CI/CD와 모니터링을 연결하며
 
 `AWS` · `Azure` · `Terraform` · `Kubernetes` · `GitOps`
 
+<p>
+  <a href="https://github.com/yubin05/eks-infra"><img src="https://img.shields.io/badge/Explore-EKS%20%26%20GitOps-163647?style=for-the-badge" alt="EKS와 GitOps 프로젝트 보기" /></a>
+  <a href="https://github.com/yubin05/Project_TEAM_AWS"><img src="https://img.shields.io/badge/Explore-Multi--Cloud%20DR-163647?style=for-the-badge" alt="멀티클라우드 DR 프로젝트 보기" /></a>
+</p>
+
+### Languages & tools
+
+<img src="https://skillicons.dev/icons?i=aws,azure,terraform,docker,kubernetes,githubactions,prometheus,grafana,linux,python,bash,cs&amp;perline=6" alt="AWS, Azure, Terraform, Docker, Kubernetes, GitHub Actions, Prometheus, Grafana, Linux, Python, Bash, C#" />
+
+### GitHub activity
+
+<p>
+  <img height="165" src="https://github-readme-stats.vercel.app/api?username=yubin05&amp;show_icons=true&amp;hide_rank=true&amp;hide_border=true&amp;theme=transparent" alt="공개 저장소 기반 GitHub 활동 통계" />
+  <img height="165" src="https://streak-stats.demolab.com/?user=yubin05&amp;hide_border=true&amp;theme=transparent" alt="GitHub 연속 기여 통계" />
+</p>
+
+<sub>활동 카드는 외부 서비스가 집계하며 GitHub 기여 그래프와 집계 기준이 다를 수 있습니다.</sub>
+
 ---
 
 ### Selected projects
